@@ -1,0 +1,5 @@
+# Compiled scripts
+*.exe
+
+# Local scripts
+*_Local.ahk
