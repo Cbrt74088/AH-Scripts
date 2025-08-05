@@ -35,13 +35,15 @@ exitEnabled := False
 
 tray := A_TrayMenu
 A_IconTip := "Shows the status of CapsLock, Insert, NumLock and ScrollLock.`nTo toggle Caps Lock, use Shift."
+prevmenu := A_IsCompiled ? "&Suspend Hotkeys" : "&Window Spy"
+
 tray.Insert("1&", "End Session", TrayIconClicked)
-tray.Insert("8&", "Open Folder", OpenFolder)
-tray.Insert("9&")
-tray.Insert("10&", "+ Notepad", ShiftClicked)
-tray.Insert("11&", "^ Calculator", CtrlClicked)
-tray.Insert("12&", "! Paint", AltClicked)
-tray.Insert("13&", "# Outlook", WinClicked)
+tray.Insert(prevmenu, "+ Notepad", ShiftClicked)
+tray.Insert(prevmenu, "^ Calculator", CtrlClicked)
+tray.Insert(prevmenu, "! Paint", AltClicked)
+tray.Insert(prevmenu, "# Outlook", WinClicked)
+tray.Insert(prevmenu)
+tray.Insert("&Suspend Hotkeys", "Open Folder", OpenFolder)
 tray.Disable("End Session")
 
 tray.Default := "End Session"
