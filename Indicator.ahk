@@ -42,9 +42,6 @@ tray.Insert("10&", "+ Notepad", ShiftClicked)
 tray.Insert("11&", "^ Calculator", CtrlClicked)
 tray.Insert("12&", "! Paint", AltClicked)
 tray.Insert("13&", "# Outlook", WinClicked)
-tray.Insert("15&", "Send Calendar", SendCalendar)
-tray.Insert("16&", "Send Appointments", SendAppointments)
-tray.Insert("17&", "Test", TeamsStuff)
 tray.Disable("End Session")
 
 tray.Default := "End Session"
