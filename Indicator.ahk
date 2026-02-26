@@ -1,6 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 ;#Persistant true
-;#Include Lib.ahk
+;#Include "Lib.ahk"
+#Include "Lib/Ini.ahk"
 ;#NoTrayIcon
 #SingleInstance Force ;Force | Ignore | Prompt | Off
 
@@ -30,7 +31,16 @@ ScreenY := 0
 ScreenW := A_ScreenWidth + 6
 ScreenH := A_ScreenHeight - 33
 
-doubleClickDelay := 250
+iniFile := Ini.Doc("Indicator.ini")
+section := iniFile["Main"]
+doubleClickDelay := section.Read("DoubleClickDelay")
+openOnShift := section.Read("OpenOnShift")
+openOnCtrl := section.Read("OpenOnCtrl")
+openOnAlt := section.Read("OpenOnAlt")
+openOnWin := section.Read("OpenOnWin")
+osRectSize := iniFile.Read("OSRectangle", "OSRectSize")
+osRectColor := iniFile.Read("OSRectangle", "OSRectColor")
+
 exitEnabled := False
 
 tray := A_TrayMenu

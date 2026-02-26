@@ -3,3 +3,6 @@
 
 # Local scripts
 *_Local.ahk
+
+# Test scripts
+test.*
